@@ -18,7 +18,7 @@ npm_react_precondition.py [First] [Second]
 Commands to be executed.
  * npm i --save-dev @types/styled-components
  * npm i styled-components
- * npm i react-router-dom@5.3.4
+ * npm i react-router-dom@5.3.0
  * npm i react-query
  * npm i --save-dev @types/react-router-dom
 """
@@ -39,7 +39,7 @@ except Exception as ex:
 command = [
     "npm i --save-dev @types/styled-components",
     "npm i styled-components",
-    "npm i react-router-dom@5.3.4",
+    "npm i react-router-dom@5.3.0",
     "npm i react-query",
     "npm i --save-dev @types/react-router-dom"
 ]
