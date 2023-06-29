@@ -20,6 +20,7 @@ Commands to be executed.
  * npm i styled-components
  * npm i react-router-dom@5.3.4
  * npm i react-query
+ * npm i --save-dev @types/react-router-dom
 """
 
 try:
@@ -40,6 +41,7 @@ command = [
     "npm i styled-components",
     "npm i react-router-dom@5.3.4",
     "npm i react-query"
+    "npm i --save-dev @types/react-router-dom"
 ]
 
 os.chdir(PATH)
