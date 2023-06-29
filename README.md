@@ -5,7 +5,7 @@
 2. run script with below manual
 
 # Manual
-## Two parameters necessary to run this script work find.
+## Two parameters necessary to run this script work fine
 
 Fisrt - The path of you want to create new react application
 
