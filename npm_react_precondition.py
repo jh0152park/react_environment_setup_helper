@@ -40,7 +40,7 @@ command = [
     "npm i --save-dev @types/styled-components",
     "npm i styled-components",
     "npm i react-router-dom@5.3.4",
-    "npm i react-query"
+    "npm i react-query",
     "npm i --save-dev @types/react-router-dom"
 ]
 
