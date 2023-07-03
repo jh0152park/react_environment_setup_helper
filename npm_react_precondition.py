@@ -2,6 +2,15 @@ import os
 import sys
 import time
 
+command = [
+    "npm i --save-dev @types/styled-components",
+    "npm i styled-components",
+    "npm i react-router-dom@5.3.0",
+    "npm i react-query",
+    "npm i --save-dev @types/react-router-dom",
+    "npm i @tanstack/react-query"
+]
+
 help = """
 Two parameters necessary to run this script work find.
 
@@ -16,12 +25,10 @@ npm_react_precondition.py [First] [Second]
 ./npm_react_precondition.py [First] [Second]
 
 Commands to be executed.
- * npm i --save-dev @types/styled-components
- * npm i styled-components
- * npm i react-router-dom@5.3.0
- * npm i react-query
- * npm i --save-dev @types/react-router-dom
 """
+
+for c in command:
+    help += f" * {c}\n"
 
 try:
     helps = ("-h", "--help")
@@ -36,13 +43,7 @@ except Exception as ex:
     print(help)
     exit(0)
     
-command = [
-    "npm i --save-dev @types/styled-components",
-    "npm i styled-components",
-    "npm i react-router-dom@5.3.0",
-    "npm i react-query",
-    "npm i --save-dev @types/react-router-dom"
-]
+
 
 os.chdir(PATH)
 print(f"{'*'*10} change directory to {PATH} done. {'*'*10}")
