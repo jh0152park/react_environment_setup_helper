@@ -9,8 +9,9 @@ command = [
     "npm i react-query",
     "npm i --save-dev @types/react-router-dom",
     "npm i react-query",
-    "npm i @tanstack/react-query"
+    "npm i react-helmet"
 ]
+# "npm i @tanstack/react-query",
 
 help = """
 Two parameters necessary to run this script work find.
