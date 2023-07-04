@@ -9,7 +9,8 @@ command = [
     "npm i react-query",
     "npm i --save-dev @types/react-router-dom",
     "npm i react-query",
-    "npm i react-helmet"
+    "npm i react-helmet",
+    "npm i --save-dev @types/react-helmet"
 ]
 # "npm i @tanstack/react-query",
 
