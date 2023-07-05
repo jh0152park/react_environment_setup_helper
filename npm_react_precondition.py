@@ -10,7 +10,8 @@ command = [
     "npm i --save-dev @types/react-router-dom",
     "npm i react-query",
     "npm i react-helmet",
-    "npm i --save-dev @types/react-helmet"
+    "npm i --save-dev @types/react-helmet",
+    "npm install recoil"
 ]
 # "npm i @tanstack/react-query",
 
