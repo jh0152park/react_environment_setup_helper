@@ -13,7 +13,7 @@ command = [
     "npm i --save-dev @types/react-helmet",
     "npm install recoil",
     "npm install react-hook-form",
-    "npm install framer-motion"
+    "npm install framer-motion@10.12.4"
 ]
 # "npm i @tanstack/react-query",
 
