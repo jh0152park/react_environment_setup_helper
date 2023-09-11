@@ -5,7 +5,7 @@ import time
 command = [
     "npm i --save-dev @types/styled-components",
     "npm i styled-components",
-    "npm i react-router-dom@5.3.0",
+    "npm i react-router-dom@6.4",
     "npm i react-query",
     "npm i --save-dev @types/react-router-dom",
     "npm i react-query",
@@ -13,7 +13,7 @@ command = [
     "npm i --save-dev @types/react-helmet",
     "npm install recoil",
     "npm install react-hook-form",
-    "npm install framer-motion@10.12.4"
+    "npm install framer-motion@10.12.4",
 ]
 # "npm i @tanstack/react-query",
 
@@ -48,7 +48,6 @@ try:
 except Exception as ex:
     print(help)
     exit(0)
-    
 
 
 os.chdir(PATH)
