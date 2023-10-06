@@ -3,10 +3,9 @@ import sys
 import time
 
 command = [
-    "npm i --save-dev @types/styled-components",
     "npm i styled-components",
+    "npm i --save-dev @types/styled-components",
     "npm i react-router-dom@6.4",
-    "npm i react-query",
     "npm i --save-dev @types/react-router-dom",
     "npm i react-query",
     "npm i react-helmet",
@@ -15,9 +14,11 @@ command = [
     "npm install react-hook-form",
     "npm install framer-motion@10.12.4",
     "npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion",
+    "npm i @tanstack/react-query-devtools",
 ]
 
 # ChagkaUI Doc: https://chakra-ui.com/getting-started
+# ReactQuery(TanStack Query) & Devtool Doc: https://tanstack.com/query/v4/docs/react/devtools
 
 # Todo
 """
