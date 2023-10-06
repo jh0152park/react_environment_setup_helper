@@ -14,8 +14,16 @@ command = [
     "npm install recoil",
     "npm install react-hook-form",
     "npm install framer-motion@10.12.4",
+    "npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion",
 ]
-# "npm i @tanstack/react-query",
+
+# ChagkaUI Doc: https://chakra-ui.com/getting-started
+
+# Todo
+"""
+* npm install react-icons --save
+* npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+"""
 
 help = """
 Two parameters necessary to run this script work find.
