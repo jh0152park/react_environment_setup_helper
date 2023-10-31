@@ -16,6 +16,7 @@ command = [
     "npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion",
     "npm i @tanstack/react-query-devtools",
     "npm i styled-reset",
+    "npm install react-icons --save",
 ]
 
 # ChagkaUI Doc: https://chakra-ui.com/getting-started
