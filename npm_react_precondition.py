@@ -17,6 +17,7 @@ command = [
     "npm i @tanstack/react-query-devtools",
     "npm i styled-reset",
     "npm install react-icons --save",
+    "npm i @tanstack/react-query",
 ]
 
 # ChagkaUI Doc: https://chakra-ui.com/getting-started
