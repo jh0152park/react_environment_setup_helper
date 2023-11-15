@@ -8,9 +8,14 @@ command = [
     "npm i react-query",
     "npm i recoil",
     "npm i @react-navigation/native",
+    "npm i @react-navigation/native-stack",
+    "npm i @react-navigation/bottom-tabs",
     "npm i react-native-screens",
     "npm i react-native-safe-area-context",
     "npm i react-native-vector-icons",
+    "npm i -D @types/react-native-vector-icons",
+    "npm i react-native-svg",
+    "npm i @yuhyeonkim/native-base",
     "npx pod-install ios",
 ]
 
