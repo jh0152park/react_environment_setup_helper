@@ -15,7 +15,12 @@ command = [
     "npm i react-native-vector-icons",
     "npm i -D @types/react-native-vector-icons",
     "npm i react-native-svg",
-    "npm i @yuhyeonkim/native-base",
+    "npm i -D eslint-config-prettier",
+    "npm i @gluestack-style/react",
+    "npm i @gluestack-ui/config",
+    "npm i @gluestack-ui/overlay",
+    "npm i @gluestack-ui/themed",
+    "npm i @gluestack-ui/toast",
     "npx pod-install ios",
 ]
 
