@@ -15,7 +15,12 @@ command = [
     "npm i react-native-vector-icons",
     "npm i -D @types/react-native-vector-icons",
     "npm i react-native-svg",
-    "npm i @yuhyeonkim/native-base",
+    "npm i -D eslint-config-prettier",
+    "npm i @gluestack-style/react",
+    "npm i @gluestack-ui/config",
+    "npm i @gluestack-ui/overlay",
+    "npm i @gluestack-ui/themed",
+    "npm i @gluestack-ui/toast",
     "npx pod-install ios",
 ]
 
@@ -78,6 +83,77 @@ for cmd in command:
     os.system(cmd)
     print(f"{'*'*10} {cmd} is done. {'*'*10}")
     time.sleep(0.5)
+
+created_path = os.path.join(PATH, NAME)
+os.chdir(created_path)
+time.sleep(1)
+
+app = "App.tsx"
+
+replacement_app_code = """
+import React from "react";
+import {GluestackUIProvider, Heading} from "@gluestack-ui/themed";
+import {config} from "@gluestack-ui/config";
+import {ToastProvider} from "@gluestack-ui/toast";
+import {OverlayProvider} from "@gluestack-ui/overlay";
+import {SafeAreaProvider} from "react-native-safe-area-context";
+
+function App(): JSX.Element {
+    return (
+        <GluestackUIProvider config={config}>
+            <SafeAreaProvider>
+                <ToastProvider>
+                    <OverlayProvider>
+                        <Heading>Hello world!</Heading>
+                    </OverlayProvider>
+                </ToastProvider>
+            </SafeAreaProvider>
+        </GluestackUIProvider>
+    );
+}
+
+export default App;
+"""
+
+with open(app, "w") as app_file:
+    app_file.write(replacement_app_code)
+
+prettier = ".prettierrc.js"
+
+replacement_prettier_code = """
+module.exports = {
+    arrowParens: 'avoid',
+    bracketSameLine: true,
+    bracketSpacing: false,
+    singleQuote: false,
+    trailingComma: 'all',
+    tabWidth: 4,
+};
+"""
+
+with open(prettier, "w") as prettier_file:
+    prettier_file.write(replacement_prettier_code)
+
+eslint = ".eslintrc.js"
+
+replacement_eslint_code = """
+module.exports = {
+    root: true,
+    extends: ["@react-native", "prettier"],
+    rules: {
+        "react-native/no-inline-styles": 0,
+        "prettier/prettier": [
+            "error",
+            {
+                "no-inline-styles": false,
+            },
+        ],
+    },
+};
+"""
+
+with open(eslint, "w") as eslint_file:
+    eslint_file.write(replacement_eslint_code)
 
 print(
     "react-native-vector-icons requires additional settings.\nPlease check docs and set it."
