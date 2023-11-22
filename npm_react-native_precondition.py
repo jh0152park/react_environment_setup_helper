@@ -3,6 +3,7 @@ import sys
 import time
 
 command = [
+    "npm install -D @tsconfig/react-native @types/jest @types/react @types/react-test-renderer typescript",
     "npm i styled-components",
     "npm i --save-dev @types/styled-components @types/styled-components-react-native",
     "npm i react-query",
@@ -70,7 +71,8 @@ os.chdir(PATH)
 print(f"{'*'*10} change directory to {PATH} done. {'*'*10}")
 time.sleep(1)
 
-os.system(f"npx react-native@latest init {NAME}")
+# os.system(f"npx react-native@latest init {NAME}")
+os.system(f"npx create-react-native-app {NAME} --use-npm")
 print(f"{'*'*10} create react native application done. {'*'*10}")
 time.sleep(1)
 
@@ -154,6 +156,16 @@ module.exports = {
 
 with open(eslint, "w") as eslint_file:
     eslint_file.write(replacement_eslint_code)
+
+ts_config = "tsconfig.json"
+ts_config_content = """
+{
+    "extends": "@tsconfig/react-native/tsconfig.json"
+}
+"""
+
+with open(ts_config, "w") as f:
+    f.write(ts_config_content)
 
 print(
     "react-native-vector-icons requires additional settings.\nPlease check docs and set it."
