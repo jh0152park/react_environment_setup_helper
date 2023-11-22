@@ -92,8 +92,7 @@ time.sleep(1)
 
 app = "App.tsx"
 
-replacement_app_code = """
-import React from "react";
+replacement_app_code = """import React from "react";
 import {GluestackUIProvider, Heading} from "@gluestack-ui/themed";
 import {config} from "@gluestack-ui/config";
 import {ToastProvider} from "@gluestack-ui/toast";
@@ -122,8 +121,7 @@ with open(app, "w") as app_file:
 
 prettier = ".prettierrc.js"
 
-replacement_prettier_code = """
-module.exports = {
+replacement_prettier_code = """module.exports = {
     arrowParens: 'avoid',
     bracketSameLine: true,
     bracketSpacing: false,
@@ -138,8 +136,7 @@ with open(prettier, "w") as prettier_file:
 
 eslint = ".eslintrc.js"
 
-replacement_eslint_code = """
-module.exports = {
+replacement_eslint_code = """module.exports = {
     root: true,
     extends: ["@react-native", "prettier"],
     rules: {
@@ -176,21 +173,13 @@ info_plist = "Info.plist"
 with open(info_plist, "r", encoding="utf-8") as file:
     lines = file.readlines()
 
-# 찾을 문자열
-search_string = "</dict>"
 
-# 찾은 문자열의 인덱스
-index = None
-
-# 뒤에서부터 역순으로 검색하여 가장 끝에 있는 </dict> 찾기
-for i in range(len(lines) - 1, -1, -1):
-    if search_string in lines[i]:
-        index = i
-        break
+# reverse_lines = lines[::-1]
+# target_index = len(lines) - reverse_lines.index("</dict>\n") - 1
+target_index = [idx for idx, line in enumerate(lines) if "</dict>\n" in line][-1]
 
 # 추가할 Key-Values 선언
-new_key_values = """
-    <key>UIAppFonts</key>
+new_key_values = """    <key>UIAppFonts</key>
     <array>
 		<string>AntDesign.ttf</string>
 		<string>Entypo.ttf</string>
@@ -215,7 +204,7 @@ new_key_values = """
 """
 
 # 해당 라인 뒤에 새로운 Key-Values 추가
-lines.insert(index, new_key_values)
+lines.insert(target_index, new_key_values)
 
 # 수정된 내용을 파일에 쓰기
 with open(info_plist, "w", encoding="utf-8") as file:
